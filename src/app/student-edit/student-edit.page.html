@@ -5,5 +5,51 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-content>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>กรุณากรอกรายระเอียดนักศึกษา</ion-card-subtitle>
+        <ion-card-title>เพิ่มนักเรียน</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-list>
+        <ion-item>
+          <ion-label position="stacked">ชื่อ</ion-label>
+          <ion-input type="text" [(ngModel)]='student.name' ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">นามสกุล</ion-label>
+          <ion-input type="text" [(ngModel)]='student.lastname' ></ion-input>
+        </ion-item>
+      </ion-list>
+        <ion-list>
+          <ion-radio-group>
+            <ion-list-header>
+              หลักสูตรที่ศึกษา
+            </ion-list-header>
+        
+            <ion-item>
+              <ion-label >ภาคปกติ</ion-label>
+              <ion-radio [(ngModel)]="student.std_t" *ngIf="student.std_type == '1'" checked ></ion-radio>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label >ภาคพิเศษ(เสาร์ - อาทิตย์)</ion-label>
+              <ion-radio [(ngModel)]="student.std_t" *ngIf="student.std_type == '2'" checked ></ion-radio>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label>ภาคพิเศษ(ศุกร์ - อาทิตย์)</ion-label>
+              <ion-radio [(ngModel)]="student.std_type" *ngIf="student.std_type == '3'" checked></ion-radio>
+            </ion-item>
+        
+          </ion-radio-group>
+        </ion-list>
+       
+        <ion-button expand="block" color="primary" (click)="updateStudent()">Save !!</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+  
 </ion-content>

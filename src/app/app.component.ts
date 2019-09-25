@@ -18,7 +18,7 @@ export class AppComponent {
     },
     {
       title: 'Student',
-      url: '/students',
+      url: '/std-list',
       icon: 'list'
     },
     {

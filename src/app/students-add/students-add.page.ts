@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
+
 import { NavController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { studentDB } from 'src/model/students/student';
+import { studentDB } from 'src/model/student';
+
 
 @Component({
   selector: 'app-students-add',
@@ -11,6 +13,7 @@ import { studentDB } from 'src/model/students/student';
   styleUrls: ['./students-add.page.scss'],
 })
 export class StudentsAddPage implements OnInit {
+  public studentPg = StudentsAddPage
   private studentDbList = this.db.list<studentDB>('student');
   public student = {
       name:"",

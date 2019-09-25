@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>std_list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+        <ion-col>
+            <ion-list  *ngFor="let student of studentList">
+                <ion-item>
+                      <ion-avatar slot="start">
+                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                      </ion-avatar>
+                 
+                      <ion-label>
+                        <h2>{{student.name}}</h2>
+                        <h3>{{student.lastname}}</h3>
+                  
+                      </ion-label>
+                          <!-- <ion-label>{{student.sname}}</ion-label> -->     
+          
+                          <ion-label *ngIf="student.std_t == '3'">  ภาคพิเศษ(ศุกร์ - อาทิตย์)</ion-label>
+                            <ion-label  *ngIf="student.std_t == '2'" > ภาคพิเศษ(เสาร์ - อาทิตย์)</ion-label>
+                              <ion-label *ngIf="student.std_t == '1'">  ภาคปกติ</ion-label>
+                      <ion-button slot="end" color="tertiary" (click)="editStudent(student)">Edit</ion-button>
+                 </ion-item>
+            </ion-list>
+        </ion-col>
+
+    </ion-row>
+    
+  </ion-grid>
+</ion-content>
